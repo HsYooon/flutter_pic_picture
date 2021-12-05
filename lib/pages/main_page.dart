@@ -1,6 +1,7 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_store/components/repo.dart';
 import 'package:flutter_store/pages/search_page.dart';
 import 'package:flutter_store/pages/wish_list_page.dart';
 
@@ -24,6 +25,11 @@ class _MainPageState extends State<MainPage> {
     2: Color.fromRGBO(65, 156, 121, 1),
     3: Color.fromRGBO(116, 104, 191, 1)
   };
+
+  Repo redRepo = Repo( 0 ,'Red');
+  Repo yellowRepo = Repo( 1 ,'Yellow');
+  Repo greenRepo = Repo( 2 ,'Green');
+  Repo purpleRepo = Repo( 3 ,'Purple');
 
   @override
   Widget build(BuildContext context) {
@@ -254,11 +260,15 @@ class _ProfileTabState extends State<ProfileTab>
                       Padding(
                         padding: const EdgeInsets.all(10),
                         child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: const [BoxShadow(blurRadius: 7)],
+                          decoration: const BoxDecoration(
+                            boxShadow: [BoxShadow(blurRadius: 7)],
                           ),
-                          child: Image.asset(
-                              "assets/images/${tab[idx]}_${index + 1}.jpg"),
+                          child: Image.network(
+                              'https://images.unsplash.com/photo-1576718388983-e3ab696f2b8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHJlZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=200&q=60 200w'
+                          ,width: 200,height: 200,fit:BoxFit.cover
+
+                          ),
+                          //Image.asset("assets/images/${tab[idx]}_${index + 1}.jpg"),
                         ),
                       ),
                       Column(children: [

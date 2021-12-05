@@ -1,10 +1,11 @@
 import 'package:flutter_store/components/picture.dart';
 
 class Repo {
+  final int id;
   final String name;
-  final List<Picture> list;
+  List<Picture> list = [];
 
-  Repo({required this.name, required this.list});
+  Repo( this.id, this.name);
 
   void add(Picture pic) {
     list.add(pic);
@@ -13,8 +14,6 @@ class Repo {
   List<Picture> get() {
     return list;
   }
-
-  Picture search(Picture pic) {}
 }
 
 /*
